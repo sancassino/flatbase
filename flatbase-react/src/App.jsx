@@ -4,7 +4,7 @@ import './App.css';
 import './style.css';
 import NewWallet from './NewWallet'; // Assuming NewWallet is in the same directory
 import LoginPage from './LoginPage'; // Assuming LoginPage is in the same directory
-import xrpl from 'xrpl'
+
 
 export const UserContext = React.createContext();
 
@@ -53,11 +53,11 @@ function App() {
     );
   } else if (showNewWallet) {
     return (
-      <UserContext.Provider value={user}>
-            <XRPLClient network={Networks.Testnet}>
-                <NewWallet />
-            </XRPLClient>
-      </UserContext.Provider>
+      <XRPLClient network={Networks.Testnet}>
+     <NewWallet/>
+     </XRPLClient>
+
+
     );
   } else {
     return (
